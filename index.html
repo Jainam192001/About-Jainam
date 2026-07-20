@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jainam Patel | Gen AI Engineer</title>
+<meta name="description" content="Portfolio of Jainam Patel, Gen AI Engineer and MEng graduate focused on machine learning, data engineering, and production analytics."/>
+<meta name="theme-color" content="#0b1020"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #0b1020;
+    --bg2: #0f172a;
+    --bg3: #1e293b;
+    --accent: #38d579;
+    --accent2: #00f5ff;
+    --text: #e2e8f0;
+    --muted: #4d688e;
+    --border: rgba(0,245,255,0.28);
+    --card: #111827;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent2);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+  body {
+    background:
+      radial-gradient(1200px 700px at 10% -10%, rgba(57,255,20,0.18), transparent 55%),
+      radial-gradient(900px 600px at 95% 15%, rgba(0,245,255,0.16), transparent 60%),
+      linear-gradient(180deg, #0b1020 0%, #0f172a 52%, #0b1020 100%);
+    color: var(--text);
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 1000;
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* NAV */
+  nav {
+    position: fixed; top:0; width:100%; z-index:100;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items:center; justify-content:space-between;
+    height: 64px;
+  }
+  .nav-logo { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:1.2rem; color:var(--accent2); letter-spacing:-0.5px; }
+  .nav-links { display:flex; gap:2rem; list-style:none; }
+  .nav-links a { color:var(--muted); text-decoration:none; font-size:0.875rem; font-weight:500; transition:color 0.2s; }
+  .nav-links a:hover { color:var(--accent2); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items:center;
+    padding: 0 10%; 
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-glow {
+    position:absolute; width:600px; height:600px;
+    background: radial-gradient(circle, rgba(57,255,20,0.18) 0%, transparent 70%);
+    top:-100px; right:-100px; pointer-events:none;
+  }
+  .hero-glow2 {
+    position:absolute; width:400px; height:400px;
+    background: radial-gradient(circle, rgba(0,245,255,0.16) 0%, transparent 70%);
+    bottom:50px; left:5%; pointer-events:none;
+  }
+  .hero-content { position:relative; z-index:1; max-width:700px; }
+  .hero-tag {
+    display:inline-flex; align-items:center; gap:8px;
+    background: rgba(57,255,20,0.1); border:1px solid var(--border);
+    border-radius:50px; padding:6px 16px; font-size:0.8rem;
+    color:var(--accent2); margin-bottom:2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-tag span.dot { width:6px;height:6px;border-radius:50%;background:var(--accent2);animation:pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+  .hero-name {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero-name span { color: var(--accent2); }
+  .hero-subtitle {
+    font-size: 1.15rem; color:var(--muted); margin-bottom:2.5rem;
+    max-width:500px; font-weight:300;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; animation: fadeUp 0.6s 0.3s ease both; }
+  .btn-primary {
+    background: var(--accent); color:#fff; padding:12px 28px;
+    border-radius:8px; text-decoration:none; font-family:'Plus Jakarta Sans',sans-serif;
+    font-weight:600; font-size:0.9rem; transition:all 0.2s;
+    border:none; cursor:pointer;
+  }
+  .btn-primary:hover { background:var(--accent2); transform:translateY(-2px); }
+  .btn-secondary {
+    background:transparent; color:var(--text); padding:12px 28px;
+    border-radius:8px; text-decoration:none; font-family:'Plus Jakarta Sans',sans-serif;
+    font-weight:600; font-size:0.9rem; transition:all 0.2s;
+    border:1px solid var(--border);
+  }
+  .btn-secondary:hover { border-color:var(--accent); color:var(--accent2); transform:translateY(-2px); }
+  .hero-socials { display:flex; gap:1rem; margin-top:2.5rem; animation: fadeUp 0.6s 0.4s ease both; }
+  .hero-socials a {
+    width:40px;height:40px;border-radius:8px;
+    background:var(--card); border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--muted); text-decoration:none; transition:all 0.2s;
+    font-size:1.1rem;
+  }
+  .hero-socials a:hover { border-color:var(--accent); color:var(--accent2); transform:translateY(-2px); }
+  .hero-socials a[aria-disabled="true"] {
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+  /* SECTIONS */
+  section { padding: 6rem 10%; }
+  .section-label {
+    font-size:0.75rem; letter-spacing:3px; text-transform:uppercase;
+    color:var(--accent2); font-weight:600; margin-bottom:0.75rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight:800; letter-spacing:-1px;
+    margin-bottom: 3rem;
+  }
+  .section-title span { color:var(--accent2); }
+
+  /* ABOUT */
+  #about { background: var(--bg2); }
+  .about-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:center; }
+  .about-img-wrap {
+    position:relative;
+  }
+ .about-photo {
+    width:100%; aspect-ratio:4/5;
+    max-width:320px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    object-fit:cover;
+    object-position:center;
+    display:block;
+  }
+  .about-img-badge {
+    position:absolute; bottom:-16px; right:-16px;
+    background:var(--accent); color:#fff;
+    border-radius:12px; padding:12px 18px;
+    font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:1.1rem;
+    text-align:center; line-height:1.2;
+  }
+  .about-img-badge small { display:block; font-size:0.7rem; font-weight:400; opacity:0.85; }
+  .about-text p { color:var(--muted); margin-bottom:1.25rem; font-weight:300; }
+  .about-stats { display:flex; gap:2rem; margin-top:2rem; flex-wrap:wrap; }
+  .stat { text-align:center; }
+  .stat-num { font-family:'Plus Jakarta Sans',sans-serif; font-size:2rem; font-weight:800; color:var(--accent2); }
+  .stat-label { font-size:0.8rem; color:var(--muted); }
+  .about-info { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin:1.5rem 0; }
+  .info-item { font-size:0.875rem; }
+  .info-item strong { color:var(--accent2); margin-right:6px; }
+
+  /* EDUCATION */
+  #education { background: var(--bg); }
+  .edu-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; }
+  .edu-card {
+    background:var(--card); border:1px solid var(--border);
+    border-radius:16px; padding:2rem;
+    transition:all 0.3s; position:relative; overflow:hidden;
+  }
+  .edu-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+  .edu-card:hover { border-color:var(--accent); transform:translateY(-4px); }
+  .edu-icon { font-size:2rem; margin-bottom:1rem; }
+  .edu-degree { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:1rem; margin-bottom:0.25rem; }
+  .edu-school { color:var(--accent2); font-weight:500; margin-bottom:0.5rem; }
+  .edu-date { font-size:0.8rem; color:var(--muted); margin-bottom:1rem; }
+  .edu-gpa { display:inline-block; background:rgba(57,255,20,0.1); border:1px solid var(--border); border-radius:6px; padding:4px 12px; font-size:0.8rem; color:var(--accent2); font-weight:600; }
+  .edu-courses { margin-top:1rem; display:flex; flex-wrap:wrap; gap:6px; }
+  .course-tag { background:var(--bg3); border-radius:6px; padding:4px 10px; font-size:0.75rem; color:var(--muted); }
+
+  /* EXPERIENCE */
+  #experience { background: var(--bg2); }
+  .timeline { position:relative; }
+  .timeline::before {
+    content:''; position:absolute; left:20px; top:0; bottom:0; width:1px;
+    background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+  }
+  .timeline-item { display:flex; gap:2rem; margin-bottom:2.5rem; }
+  .timeline-dot {
+    width:42px; height:42px; border-radius:50%;
+    background:var(--accent); flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700; font-size:0.7rem; color:#fff;
+    font-family:'Plus Jakarta Sans',sans-serif; z-index:1;
+    border:2px solid var(--bg2);
+  }
+  .timeline-content {
+    background:var(--card); border:1px solid var(--border);
+    border-radius:12px; padding:1.5rem; flex:1;
+    transition:border-color 0.2s;
+  }
+  .timeline-content:hover { border-color:var(--accent); }
+  .timeline-role { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:1rem; margin-bottom:2px; }
+  .timeline-company { color:var(--accent2); font-size:0.875rem; margin-bottom:4px; }
+  .timeline-date { font-size:0.75rem; color:var(--muted); margin-bottom:1rem; }
+  .timeline-desc { font-size:0.875rem; color:var(--muted); font-weight:300; line-height:1.6; }
+  .timeline-bullets { margin:0; padding-left:1.2rem; color:var(--muted); font-weight:300; font-size:0.875rem; line-height:1.6; }
+  .timeline-bullets li { margin-bottom:0.45rem; }
+
+  /* PROJECTS */
+  #projects { background:var(--bg); }
+  .proj-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
+  .proj-card {
+    background:var(--card); border:1px solid var(--border);
+    border-radius:16px; padding:1.75rem;
+    transition:all 0.3s; text-decoration:none; color:inherit; display:block;
+  }
+  a.proj-card { cursor:pointer; }
+  div.proj-card { cursor:default; }
+  .proj-card:hover { border-color:var(--accent); transform:translateY(-4px); }
+  .proj-icon { font-size:2rem; margin-bottom:1rem; }
+  .proj-title { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:1rem; margin-bottom:0.5rem; }
+  .proj-desc { font-size:0.85rem; color:var(--muted); font-weight:300; margin-bottom:1rem; line-height:1.6; }
+  .proj-tags { display:flex; flex-wrap:wrap; gap:6px; }
+  .proj-tag { background:rgba(57,255,20,0.1); border:1px solid var(--border); border-radius:6px; padding:3px 10px; font-size:0.72rem; color:var(--accent2); }
+
+  /* SKILLS */
+  #skills { background:var(--bg2); }
+  .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5rem; }
+  .skill-group { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.5rem; }
+  .skill-group-title { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:0.875rem; color:var(--accent2); margin-bottom:1rem; text-transform:uppercase; letter-spacing:1px; }
+  .skill-list { display:flex; flex-wrap:wrap; gap:8px; }
+  .skill-item { background:var(--bg3); border-radius:8px; padding:6px 14px; font-size:0.8rem; color:var(--text); border:1px solid transparent; transition:all 0.2s; }
+  .skill-item:hover { border-color:var(--accent); color:var(--accent2); }
+
+  /* CONTACT */
+  #contact { background:var(--bg); text-align:center; }
+  .contact-inner { max-width:600px; margin:0 auto; }
+  .contact-inner p { color:var(--muted); margin-bottom:2.5rem; font-weight:300; }
+  .contact-links { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem; }
+  .contact-link {
+    display:flex; align-items:center; gap:10px;
+    background:var(--card); border:1px solid var(--border);
+    border-radius:10px; padding:14px 24px;
+    text-decoration:none; color:var(--text); transition:all 0.2s;
+    font-size:0.9rem;
+  }
+  .contact-link:hover { border-color:var(--accent); color:var(--accent2); transform:translateY(-2px); }
+  .contact-link svg { width:20px; height:20px; }
+  .contact-link[aria-disabled="true"] {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  /* FOOTER */
+  footer { background:var(--bg2); text-align:center; padding:2rem; color:var(--muted); font-size:0.8rem; border-top:1px solid var(--border); }
+
+  /* TYPING ANIMATION */
+  .typing-wrap { display:inline-block; }
+  .typed { border-right:2px solid var(--accent2); padding-right:4px; animation: blink 1s step-end infinite; }
+  @keyframes blink { from,to{border-color:transparent} 50%{border-color:var(--accent2)} }
+
+  /* SCROLL ANIMATIONS */
+  .reveal { opacity:0; transform:translateY(30px); transition:all 0.6s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  @media(max-width:768px){
+    section { padding:4rem 6%; }
+    #hero { padding:0 6%; }
+    .about-grid { grid-template-columns:1fr; }
+    nav { padding:0 1.25rem; }
+    .nav-links { gap:1rem; }
+    .timeline::before { display:none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- NAV -->
+<nav aria-label="Primary">
+  <div class="nav-logo">JP</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      Available for opportunities
+    </div>
+    <h1 class="hero-name">
+      Hi, I'm<br><span>Jainam Patel</span>
+    </h1>
+    <p class="hero-subtitle">
+      I build intelligent systems as a <span class="typing-wrap"><span class="typed" id="typed"></span></span>
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+      <a href="#projects" class="btn-secondary">View Projects</a>
+    </div>
+    <div class="hero-socials">
+      <a href="https://www.linkedin.com/in/jainam-patel-89753b1b8/" title="LinkedIn" aria-label="LinkedIn profile" data-external-link>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://github.com/Jainam192001" title="GitHub" aria-label="GitHub profile" data-external-link>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <a href="mailto:jainam.connect1@gmail.com" title="Email" aria-label="Send email to Jainam Patel">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <p class="section-label">About Me</p>
+    <h2 class="section-title">Who I <span>Am</span></h2>
+  </div>
+  <div class="about-grid reveal">
+    <div class="about-img-wrap">
+      <img src="JP.jpg" alt="Jainam Patel" class="about-photo" width="320" height="400"/>
+      <div class="about-img-badge">
+        Gen AI<br><small>Engineer</small>
+      </div>
+    </div>
+    <div class="about-text">
+      <p>Hello! I'm <strong>Jainam Patel</strong>, a Gen AI–focused engineer with an MEng in Engineering Systems and Technology from McMaster University. I combine machine learning, statistical modeling, and solid software engineering to ship data products end to end—from pipelines and modeling to dashboards stakeholders actually use.</p>
+      <p>Most recently I completed a <strong>co-op at Hydro One</strong> (Business Analyst title) in Toronto, where I applied Python, SQL, and Power BI to build data-driven analytics and automation solutions, with a growing focus on AI-enabled insights and scalable decision-making. That experience strengthened my ability to translate complex data into actionable intelligence and sparked my interest in leveraging Generative AI to solve real-world business problems. <strong>Gen AI, ML, and intelligent systems</strong> built on reliable data foundations.</p>
+      <div class="about-info">
+        <div class="info-item"><strong>📍</strong> Hamilton, ON (GTA)</div>
+        <div class="info-item"><strong>📧</strong> jainam.connect1@gmail.com</div>
+        <div class="info-item"><strong>📱</strong> 365-883-2719</div>
+        <div class="info-item"><strong>💼</strong> Open to opportunities</div>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Featured projects</div></div>
+        <div class="stat"><div class="stat-num">1</div><div class="stat-label"> Internship </div></div>
+        <div class="stat"><div class="stat-num">3.8</div><div class="stat-label">MEng GPA / 4.0</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="reveal">
+    <p class="section-label">Education</p>
+    <h2 class="section-title">My <span>Qualifications</span></h2>
+  </div>
+  <div class="edu-cards reveal">
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-degree">Master of Engineering, Systems and Technology(Automation & Smart System)</div>
+      <div class="edu-school">McMaster University · Hamilton, ON</div>
+      <div class="edu-date">📅 Jan 2024 – Dec 2025</div>
+      <span class="edu-gpa">GPA: 3.8 / 4.0</span>
+      <div class="edu-courses">
+        <span class="course-tag">Systems engineering</span>
+        <span class="course-tag">Data &amp; analytics</span>
+        <span class="course-tag">ML applications</span>
+      </div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon">🏫</div>
+      <div class="edu-degree">Bachelor of Engineering, Computer Science and Engineering</div>
+      <div class="edu-school">Gujarat Technological University · Gujarat, IN</div>
+      <div class="edu-date">📅 Jul 2019 – May 2023</div>
+      <span class="edu-gpa">GPA: 3.6 / 4.0</span>
+      <div class="edu-courses">
+        <span class="course-tag">Artificial Intelligence</span>
+        <span class="course-tag">Machine Learning</span>
+        <span class="course-tag">Core CS &amp; software</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="reveal">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">My <span>Work History</span></h2>
+  </div>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-dot">01</div>
+      <div class="timeline-content">
+        <div class="timeline-role">Business Analyst (Data &amp; Analytics)</div>
+        <div class="timeline-company">Hydro One Networks Inc. · Toronto, ON</div>
+        <div class="timeline-date">📅 Jan 2025 – Aug 2025</div>
+        <ul class="timeline-bullets">
+          <li>Analyzed cybersecurity risk and vulnerability data from Tenable scans across <strong>400+</strong> endpoints using Python (Pandas, NumPy) and SQL—cleaning, transforming, and running EDA to support data-driven budgeting and IT security investment planning.</li>
+          <li>Built and maintained production <strong>Power BI</strong> dashboards for real stakeholders, improving visibility into risk, patch compliance, and exposure metrics for executive decision-making.</li>
+          <li>Developed advanced <strong>DAX</strong> measures and <strong>Power Query (M)</strong> transformations; integrated data from SQL and enterprise systems; monitored refresh pipelines and resolved failures to keep reporting reliable.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="reveal">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">My <span>Work</span></h2>
+  </div>
+  <div class="proj-grid reveal">
+    <a href="https://github.com/Jainam192001/ALL-RAG" class="proj-card" aria-label="View ALL-RAG project on GitHub" data-external-link>
+      <div class="proj-icon">🤖</div>
+      <div class="proj-title">ALL-RAG Benchmark Pipeline</div>
+      <p class="proj-desc">End-to-end RAG ingestion pipeline comparing 8 RAG architectures—Naive, Modular, Graph, Agentic, Self-RAG, CRAG, and Multimodal—using arXiv papers and unified embeddings.</p>
+      <p class="proj-desc">Built with LangChain, OpenAI embeddings, and vector stores (ChromaDB / FAISS) for chunking, retrieval benchmarking, and reproducible Gen AI experimentation.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">LangChain</span>
+        <span class="proj-tag">RAG</span>
+        <span class="proj-tag">ChromaDB</span>
+        <span class="proj-tag">OpenAI</span>
+      </div>
+    </a>
+    <a href="https://github.com/Jainam192001/Mars-Rover-Pipeline" class="proj-card" aria-label="View Mars Rover Pipeline project on GitHub" data-external-link>
+      <div class="proj-icon">🛰️</div>
+      <div class="proj-title">Automated Mars Rover Data Pipeline</div>
+      <p class="proj-desc">End-to-end ETL ingesting 50+ daily NASA rover images with scheduled orchestration and containerized execution.</p>
+      <p class="proj-desc">Feature extraction across 8+ image properties (RGB, brightness, aspect ratio, metadata) for downstream analytics.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">OpenCV</span>
+        <span class="proj-tag">Docker</span>
+        <span class="proj-tag">Airflow</span>
+        <span class="proj-tag">PostgreSQL</span>
+      </div>
+    </a>
+    <a href="https://github.com/Jainam192001/UCI-Adult-Income-Prediction" class="proj-card" aria-label="View UCI Adult Income Prediction project on GitHub" data-external-link>
+      <div class="proj-icon">📈</div>
+      <div class="proj-title">UCI Adult Income Prediction</div>
+      <p class="proj-desc">Compared Logistic Regression, Decision Tree, and SVM with rigorous preprocessing, encoding, scaling, and cross-validation.</p>
+      <p class="proj-desc">Evaluated models with confusion matrices, precision–recall, and ROC analysis—up to ~85% accuracy and 0.91 AUC with Logistic Regression.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">Logistic Regression</span>
+        <span class="proj-tag">Decision Tree</span>
+        <span class="proj-tag">SVM</span>
+        <span class="proj-tag">Matplotlib</span>
+      </div>
+    </a>
+    <a href="https://github.com/Jainam192001/Time-Series-Climate-Analysis" class="proj-card" aria-label="View Time-Series Climate Analysis project on GitHub" data-external-link>
+      <div class="proj-icon">📈</div>
+      <div class="proj-title">Time-Series Climate Analysis</div>
+      <p class="proj-desc">Applied K-Means clustering (k = 2, 3, 5) on precipitation patterns with silhouette score <strong>0.461</strong> for validation.</p>
+      <p class="proj-desc">Trained Logistic Regression to predict extreme precipitation events—<strong>98.3%</strong> accuracy, <strong>0.851</strong> F1, and <strong>0.993</strong> ROC-AUC.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span>
+        <span class="proj-tag">Logistic Regression</span>
+        <span class="proj-tag">Decision Tree</span>
+        <span class="proj-tag">SVM</span>
+        <span class="proj-tag">Matplotlib</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="reveal">
+    <p class="section-label">Skills</p>
+    <h2 class="section-title">My <span>Toolbox</span></h2>
+  </div>
+  <div class="skills-grid reveal">
+    <div class="skill-group">
+      <div class="skill-group-title">Languages &amp; analysis</div>
+      <div class="skill-list">
+        <span class="skill-item">Python</span>
+        <span class="skill-item">SQL</span>
+        <span class="skill-item">R</span>
+        <span class="skill-item">C</span>
+        <span class="skill-item">PySpark</span>
+        <span class="skill-item">EDA</span>
+        <span class="skill-item">Statistical analysis</span>
+        <span class="skill-item">Data modeling</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">ML &amp; modeling</div>
+      <div class="skill-list">
+        <span class="skill-item">Classification</span>
+        <span class="skill-item">Regression</span>
+        <span class="skill-item">Clustering</span>
+        <span class="skill-item">Cross-validation</span>
+        <span class="skill-item">Feature engineering</span>
+        <span class="skill-item">Model evaluation</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Data engineering</div>
+      <div class="skill-list">
+        <span class="skill-item">ETL / ELT</span>
+        <span class="skill-item">Apache Airflow</span>
+        <span class="skill-item">Docker</span>
+        <span class="skill-item">REST APIs</span>
+        <span class="skill-item">Pipelines</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Cloud &amp; platforms</div>
+      <div class="skill-list">
+        <span class="skill-item">Azure</span>
+        <span class="skill-item">AWS</span>
+        <span class="skill-item">Databricks</span>
+        <span class="skill-item">Snowflake</span>
+        <span class="skill-item">Microsoft Fabric</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Databases</div>
+      <div class="skill-list">
+        <span class="skill-item">PostgreSQL</span>
+        <span class="skill-item">MySQL</span>
+        <span class="skill-item">Oracle</span>
+        <span class="skill-item">DB2</span>
+        <span class="skill-item">MongoDB</span>
+        <span class="skill-item">Redis</span>
+        <span class="skill-item">DynamoDB</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Viz &amp; delivery</div>
+      <div class="skill-list">
+        <span class="skill-item">Power BI</span>
+        <span class="skill-item">DAX</span>
+        <span class="skill-item">Power Query (M)</span>
+        <span class="skill-item">Git</span>
+        <span class="skill-item">CI/CD</span>
+        <span class="skill-item">HTML</span>
+        <span class="skill-item">CSS</span>
+        <span class="skill-item">Beautiful Soup</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner reveal">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <p>I'm open to Gen AI Developer, Machine learning engineer, Data Scientist, and data engineering opportunities, new grad, or full-time. Reach out if you'd like to collaborate or chat about building reliable AI on top of strong data foundations.</p>
+    <div class="contact-links">
+      <a href="mailto:jainam.connect1@gmail.com" class="contact-link" aria-label="Send an email to Jainam Patel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+        jainam.connect1@gmail.com
+      </a>
+      <a href="tel:+13658832719" class="contact-link" aria-label="Call Jainam Patel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        365-883-2719
+      </a>
+      <a href="https://www.linkedin.com/in/jainam-patel-89753b1b8/" class="contact-link" aria-label="Open LinkedIn profile" data-external-link>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/Jainam192001" class="contact-link" aria-label="Open GitHub profile" data-external-link>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        GitHub
+      </a>
+    </div>
+     <a href="JAINAM PATEL_AI Engineer.pdf" class="btn-primary" download="JAINAM PATEL_AI Engineer.pdf">Download Resume</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>Designed & Built by <strong>Jainam Patel</strong> · <span id="year"></span></p>
+</footer>
+
+<script>
+  const roles = ["Gen AI Engineer.", "ML & Analytics Engineer.", "Data & AI Systems Builder.", "Problem Solver."];
+  let ri = 0, ci = 0, del = false;
+  const el = document.getElementById("typed");
+  function type() {
+    if (!el) return;
+    const cur = roles[ri];
+    if (!del) {
+      el.textContent = cur.slice(0, ++ci);
+      if (ci === cur.length) { del = true; setTimeout(type, 2000); return; }
+    } else {
+      el.textContent = cur.slice(0, --ci);
+      if (ci === 0) { del = false; ri = (ri + 1) % roles.length; }
+    }
+    setTimeout(type, del ? 60 : 100);
+  }
+  if (el) type();
+
+  if ("IntersectionObserver" in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach(node => obs.observe(node));
+  } else {
+    document.querySelectorAll(".reveal").forEach(node => node.classList.add("visible"));
+  }
+
+  document.querySelectorAll('[data-external-link]').forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || href === "#") {
+      link.setAttribute("aria-disabled", "true");
+      link.setAttribute("tabindex", "-1");
+      return;
+    }
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+  });
+
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+</script>
+</body>
+</html>
+
